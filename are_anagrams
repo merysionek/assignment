@@ -1,0 +1,26 @@
+def are_anagrams(s1,s2,s3):
+    # walidacja - czy argumenty funkcji są odpowiedniego typu 'string' - jeżeli tak to sprawdzam dalej
+    if(isinstance(s1, str) & isinstance(s2, str) & isinstance(s3, str)):
+
+        # wycinam spacje i ujednolicam wielkość liter
+        s1,s2,s3=s1.replace(" ", "").upper(),s2.replace(" ", "").upper(),s3.replace(" ", "").upper()
+
+        if not(len(s1)==len(s2)==len(s3)):
+        #jeżeli długość s1,s2,s3 są różne, to nie mogą być anagramami
+            return(False)
+
+        #funkcja rozcina wyrazy na litery, sortuję alfabetycznie i skleja w jeden wyraz
+        def rozcinacz(x):
+            x=list(x)
+            x.sort()
+            x="".join(x)
+            return(x)
+        #sprawdzam,czy powstałe w ten sposób wyrazy są jednakowe
+        if(rozcinacz(s1)==rozcinacz(s2)==rozcinacz(s3)):
+            return(True)
+        else:
+            return(False)
+
+    else:
+        return(False)
+
