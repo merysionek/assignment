@@ -9,7 +9,7 @@ def are_anagrams(s1,s2,s3):
         #jeżeli długość s1,s2,s3 są różne, to nie mogą być anagramami
             return(False)
 
-        #funkcja rozcina wyrazy na litery, sortuję alfabetycznie i skleja w jeden wyraz
+        #funkcja rozcina wyrazy na litery, sortuje alfabetycznie i skleja w jeden wyraz
         def rozcinacz(x):
             x=list(x)
             x.sort()
