@@ -1,3 +1,8 @@
+#plik na stronie "https://womenintechnology.pl/wp-content/themes/women-in-technology/assets/py/zadanie_rekrutacyjne.ipynb"
+#nie chciał się zaczytać w jupyter notebook z powodu problemów z formatowaniem UTF-8 - zgłosiłam to na FB womenintechnology
+#póki co wrzucam samą funkcję are_anagrams
+
+
 def are_anagrams(s1,s2,s3):
     # basic validation - checking if arguments are of type 'string'
     if(isinstance(s1, str) & isinstance(s2, str) & isinstance(s3, str)):
