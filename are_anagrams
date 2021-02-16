@@ -1,31 +1,79 @@
-#plik na stronie "https://womenintechnology.pl/wp-content/themes/women-in-technology/assets/py/zadanie_rekrutacyjne.ipynb"
-#nie chciał się zaczytać w jupyter notebook z powodu problemów z formatowaniem UTF-8 - zgłosiłam to na FB womenintechnology
-#póki co wrzucam samą funkcję are_anagrams
-
-
-def are_anagrams(s1,s2,s3):
-    # basic validation - checking if arguments are of type 'string'
-    if(isinstance(s1, str) & isinstance(s2, str) & isinstance(s3, str)):
-
-        # cutting white spaces
-        s1,s2,s3=s1.replace(" ", "").upper(),s2.replace(" ", "").upper(),s3.replace(" ", "").upper()
-
-        if not(len(s1)==len(s2)==len(s3)):
-        #if s1,s2,s3 differ in length they cannot be anagrams
-            return(False)
-
-        #function cutting string into list, sorting it and merging into a string
-        def cutFUN(x):
-            x=list(x)
-            x.sort()
-            x="".join(x)
-            return(x)
-        #checking if obtained strings are the same
-        if(cutFUN(s1)==cutFUN(s2)==cutFUN(s3)):
-            return(True)
-        else:
-            return(False)
-
-    else:
-        return(False)
-
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**Seria warsztatów z analizy danych w Pythonie**\n",
+    "\n",
+    "_Zadanie rekrutacyjne_\n",
+    "\n",
+    "Napisz funkcję <code><font color=\"blue\">are_anagrams</font>(s1, s2, s3)</code>, która zwróci:\n",
+    "\n",
+    "* <code>True</code>, jeżeli łańcuchy znaków <code>s1, s2, s3</code> są anagramami,\n",
+    "\n",
+    "* <code>False</code>, jeżeli łańcuchy znaków <code>s1, s2, s3</code> nie są anagramami.\n",
+    "\n",
+    "Załóż, że maksymalna długość każdego z łańcuchów znaków jest równa **5**.\n",
+    "\n",
+    "Uzasadnij zaproponowane rozwiązanie, umieszczając komentarze w treści kodu."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def are_anagrams(s1,s2,s3):\n",
+    "    # basic validation - checking if arguments are of type 'string'\n",
+    "    if(isinstance(s1, str) & isinstance(s2, str) & isinstance(s3, str)):\n",
+    "\n",
+    "        # cutting white spaces\n",
+    "        s1,s2,s3=s1.replace(\" \", \"\").upper(),s2.replace(\" \", \"\").upper(),s3.replace(\" \", \"\").upper()\n",
+    "\n",
+    "        if not(len(s1)==len(s2)==len(s3)):\n",
+    "        #if s1,s2,s3 differ in length they cannot be anagrams\n",
+    "            return(False)\n",
+    "\n",
+    "        #function cutting string into list, sorting it and merging into a string\n",
+    "        def cutFUN(x):\n",
+    "            x=list(x)\n",
+    "            x.sort()\n",
+    "            x=\"\".join(x)\n",
+    "            return(x)\n",
+    "        #checking if obtained strings are the same\n",
+    "        if(cutFUN(s1)==cutFUN(s2)==cutFUN(s3)):\n",
+    "            return(True)\n",
+    "        else:\n",
+    "            return(False)\n",
+    "\n",
+    "    else:\n",
+    "        return(False)\n",
+    "\n"
+   ]
+  }
+ ],
+ "metadata": {
+  "celltoolbar": "Edit Metadata",
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
